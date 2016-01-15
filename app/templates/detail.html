@@ -1,0 +1,24 @@
+<ion-view>
+    <ion-nav-title>
+        {{pizza.name}}
+    </ion-nav-title>
+    <ion-content>
+        <div class="list card">
+
+            <div class="item item-avatar item-icon-left">
+                <i class="icon ion-pizza"></i>
+                <h2>{{pizza.name}}</h2>
+                <p>Ist in unserem Angebot die Nummer {{pizza.id}}</p>
+            </div>
+
+            <div class="item item-body">
+                <p>
+                    {{pizza.description}}
+                </p>
+            </div>
+            <div class="item item-divider balanced text-big text-right">
+                {{pizza.price ? (pizza.price | currency) : 'kostenlos'}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

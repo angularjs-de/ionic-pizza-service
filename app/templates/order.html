@@ -1,0 +1,36 @@
+<ion-view>
+    <ion-nav-title>
+        Pizza <i class="icon ion-pizza"></i> App
+    </ion-nav-title>
+    <ion-header-bar class="bar-subheader item-input-inset">
+        <label class="item-input-wrapper" style="width: 100%;">
+           <i class="icon ion-search placeholder-icon"></i>
+           <input type="text" placeholder="Pizza-Suche" ng-model="search">
+        </label>
+    </ion-header-bar>
+    <ion-content>
+        <div ng-show="loading" class="text-center padding">
+            <ion-spinner></ion-spinner>
+        </div>
+        <ion-refresher
+            pulling-text="aktualisieren..."
+            on-refresh="refresh()">
+        </ion-refresher>
+        <div class="list" ng-show="!loading">
+            <div class="item item-divider">
+               <i class="icon ion-fork"></i>
+               <i class="icon ion-knife"></i> Angebot
+            </div>
+            <div ui-sref="base.detail({ id: pizza.id })" class="item" ng-repeat="pizza in filterPizza()">
+                <div class="row row-no-padding row-center">
+                    <div class="col col-10 text-left">{{pizza.id}}</div>
+                    <div class="col col-60"><h2>{{pizza.name}}</h2><p>{{pizza.price | currency}}</p></div>
+                    <div class="col col-10"><i class="icon ion-ios-information"></i></div>
+                    <div class="col col-20 text-right">
+                        <button class="button button-medium button-balanced icon ion-ios-cart" ng-click="addToCart($event, pizza)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
