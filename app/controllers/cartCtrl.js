@@ -12,7 +12,7 @@
                 if (!$scope.cart.length) {
                     return $ionicPopup.alert({
                         title: '<b>Dein Warenkorb ist leer!</b>',
-                        template: 'Füge zuerst Produkte aus unseren Angebote zu Deinem Warenkorb hinzu.'
+                        template: 'Füge zuerst Produkte aus Unserem Angebot zu Deinem Warenkorb hinzu.'
                     });
                 }
             });
